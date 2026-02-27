@@ -5,14 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CruelMC</title>
 
+<!-- AZ əlifba dəstəyi olan sərt font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
 <style>
 
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: white;
-    text-align: center;
 
     display: flex;
     flex-direction: column;
@@ -25,36 +27,39 @@ body {
         url('https://images.alphacoders.com/633/633151.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
 
-/* Logo */
-.logo {
-    margin-top: 80px;
-}
-
+/* LOGO */
 .logo img {
-    width: 320px;
+    width: 420px;
+    margin-bottom: 30px;
 }
 
-/* Başlıq */
+/* MINECRAFT STONE STYLE TITLE */
 .main-title {
-    margin-top: 35px;
-    font-size: 28px;
-    font-weight: 800;
-    text-shadow: 3px 3px 0 #000;
+    font-size: 34px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 1px;
+
+    color: #e0e0e0;
+
+    text-shadow:
+        3px 3px 0 #000,
+        5px 5px 0 #111,
+        7px 7px 0 #000;
 }
 
-/* IP Box */
+/* IP BOX */
 .ip-box {
     margin-top: 40px;
-    background: rgba(30,30,30,0.9);
-    padding: 15px 25px;
+    background: #1f1f1f;
+    padding: 18px 28px;
     border-radius: 8px;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    box-shadow: 0 4px 0 #000;
+    gap: 14px;
+    box-shadow: 0 6px 0 #000;
     position: relative;
 }
 
@@ -69,7 +74,7 @@ body {
     border: none;
     padding: 8px 14px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 800;
     border-radius: 6px;
     cursor: pointer;
     box-shadow: 0 4px 0 #2a5f1b;
@@ -83,7 +88,7 @@ body {
 
 .copied {
     position: absolute;
-    bottom: -25px;
+    bottom: -28px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
@@ -92,15 +97,14 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* Discord Button */
+/* DISCORD */
 .discord-btn {
-    display: inline-block;
     margin-top: 35px;
     padding: 14px 30px;
     background: #5865F2;
     color: white;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 800;
     border-radius: 10px;
     transition: 0.3s ease;
     font-size: 16px;
