@@ -8,196 +8,192 @@
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    height: 100vh;
-    background: url('background.png') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Russo One', sans-serif;
-    animation: fadeInBody 1.2s ease forwards;
-    opacity: 0;
+body{
+    height:100vh;
+    background:url('background.png') no-repeat center center fixed;
+    background-size:cover;
+    font-family:'Russo One', sans-serif;
+    animation:fadeIn 1.2s ease forwards;
+    opacity:0;
 }
 
 /* ===== NAVBAR ===== */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 0;
+    background:rgba(0,0,0,0.65);
+    backdrop-filter:blur(8px);
+    display:flex;
+    justify-content:center;
+    z-index:1000;
 }
 
-.nav-container {
-    display: flex;
-    gap: 40px;
+.nav-container{
+    display:flex;
+    gap:45px;
 }
 
-.nav-item {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    position: relative;
-    transition: 0.3s;
+.nav-item{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    position:relative;
+    transition:0.3s;
 }
 
-.nav-item:hover {
-    color: #00ff88;
+.nav-item:hover{
+    color:#00ff88;
 }
 
-.nav-item::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 2px;
-    background: #00ff88;
-    transition: 0.3s;
+.nav-item::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#00ff88;
+    transition:0.3s;
 }
 
-.nav-item:hover::after {
-    width: 100%;
+.nav-item:hover::after{
+    width:100%;
 }
 
-.discord-nav {
-    color: #5865F2;
+.discord-link{
+    color:#5865F2;
 }
 
-.active {
-    color: #00ff88;
+/* ===== CENTER SECTION ===== */
+.center{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-/* ===== CENTER PANEL ===== */
-.center {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.overlay {
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(6px);
-    padding: 60px 80px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
-    margin-top: 80px;
+.panel{
+    background:rgba(0,0,0,0.65);
+    backdrop-filter:blur(6px);
+    padding:60px 80px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(0,0,0,0.8);
+    margin-top:80px;
 }
 
 /* ===== LOGO ===== */
-.logo {
-    width: 340px;
-    margin-bottom: 35px;
-    animation: logoDrop 1.2s ease forwards;
-    opacity: 0;
-    filter: drop-shadow(0 0 10px rgba(255,120,0,0.6))
-            drop-shadow(0 0 20px rgba(255,80,0,0.4));
-    transition: 0.4s ease;
+.logo{
+    width:360px;
+    margin-bottom:35px;
+    opacity:0;
+    animation:logoDrop 1.2s ease forwards;
+    filter:drop-shadow(0 0 12px rgba(255,120,0,0.6))
+           drop-shadow(0 0 25px rgba(255,80,0,0.4));
+    transition:0.4s;
 }
 
-.logo:hover {
-    filter: drop-shadow(0 0 15px rgba(255,140,0,0.8))
-            drop-shadow(0 0 30px rgba(255,90,0,0.6));
-    transform: scale(1.05);
+.logo:hover{
+    transform:scale(1.05);
+    filter:drop-shadow(0 0 18px rgba(255,150,0,0.9))
+           drop-shadow(0 0 35px rgba(255,90,0,0.7));
 }
 
 /* ===== TITLE ===== */
-.title {
-    font-size: 32px;
-    color: white;
-    margin-bottom: 40px;
-    text-shadow: 3px 3px 0px black;
-    animation: fadeSlide 1.4s ease forwards;
-    animation-delay: 0.6s;
-    opacity: 0;
+.title{
+    font-size:30px;
+    color:white;
+    margin-bottom:40px;
+    text-shadow:3px 3px 0 black;
+    opacity:0;
+    animation:fadeUp 1.4s ease forwards;
+    animation-delay:0.6s;
 }
 
 /* ===== IP BOX ===== */
-.ip-box {
-    display: inline-flex;
-    align-items: center;
-    background: #111;
-    padding: 15px 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 0 black;
-    margin-bottom: 25px;
-    animation: fadeSlide 1.4s ease forwards;
-    animation-delay: 1s;
-    opacity: 0;
+.ip-box{
+    display:inline-flex;
+    align-items:center;
+    background:#111;
+    padding:15px 22px;
+    border-radius:12px;
+    box-shadow:0 6px 0 black;
+    margin-bottom:25px;
+    opacity:0;
+    animation:fadeUp 1.4s ease forwards;
+    animation-delay:1s;
 }
 
-.ip-text {
-    color: #00ff88;
-    font-size: 18px;
-    margin-right: 15px;
+.ip-text{
+    color:#00ff88;
+    font-size:18px;
+    margin-right:15px;
 }
 
-.copy-btn {
-    background: #00aa44;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
+.copy-btn{
+    background:#00aa44;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-.copy-btn:hover {
-    background: #00cc55;
+.copy-btn:hover{
+    background:#00cc55;
 }
 
 /* ===== DISCORD BUTTON ===== */
-.discord-btn {
-    display: inline-block;
-    background: #5865F2;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
-    animation: fadeSlide 1.4s ease forwards;
-    animation-delay: 1.4s;
-    opacity: 0;
+.discord-btn{
+    display:inline-block;
+    background:#5865F2;
+    color:white;
+    padding:12px 30px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+    opacity:0;
+    animation:fadeUp 1.4s ease forwards;
+    animation-delay:1.4s;
 }
 
-.discord-btn:hover {
-    transform: scale(1.05);
+.discord-btn:hover{
+    transform:scale(1.05);
 }
 
 /* ===== ANIMATIONS ===== */
-@keyframes fadeInBody {
-    to { opacity: 1; }
+@keyframes fadeIn{
+    to{opacity:1;}
 }
 
-@keyframes logoDrop {
-    0% {
-        transform: translateY(-80px) scale(0.9);
-        opacity: 0;
+@keyframes logoDrop{
+    0%{
+        transform:translateY(-80px) scale(0.9);
+        opacity:0;
     }
-    100% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
+    100%{
+        transform:translateY(0) scale(1);
+        opacity:1;
     }
 }
 
-@keyframes fadeSlide {
-    0% {
-        transform: translateY(30px);
-        opacity: 0;
+@keyframes fadeUp{
+    0%{
+        transform:translateY(30px);
+        opacity:0;
     }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
+    100%{
+        transform:translateY(0);
+        opacity:1;
     }
 }
 </style>
@@ -207,20 +203,20 @@ body {
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="#" class="nav-item active">Ana Səhifə</a>
-        <a href="#qaydalar" class="nav-item">Qaydalar</a>
-        <a href="#yetkililer" class="nav-item">Yetkililər</a>
-        <a href="#" class="nav-item discord-nav">Discord</a>
+        <a href="#" class="nav-item">Ana Səhifə</a>
+        <a href="#" class="nav-item">Qaydalar</a>
+        <a href="#" class="nav-item">Səlahiyyətlilər</a>
+        <a href="#" class="nav-item discord-link">Discord</a>
     </div>
 </nav>
 
 <div class="center">
-    <div class="overlay">
+    <div class="panel">
 
-        <img src="logo.png" class="logo">
+        <img src="LOGOTEXT.png" class="logo">
 
         <div class="title">
-            Azərbaycanın ilk Minecraft Serverinə xoş gəldiniz
+            Azərbaycanın ilk Minecraft serverinə xoş gəlmisiniz
         </div>
 
         <div class="ip-box">
@@ -233,15 +229,15 @@ body {
         <br>
 
         <a href="#" class="discord-btn">
-            Discord'a Qoşul
+            Discord'a qoşul
         </a>
 
     </div>
 </div>
 
 <script>
-function copyIP() {
-    const ip = document.getElementById("ip").innerText;
+function copyIP(){
+    const ip=document.getElementById("ip").innerText;
     navigator.clipboard.writeText(ip);
     alert("IP kopyalandı!");
 }
