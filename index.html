@@ -228,7 +228,7 @@ body{
 
         <div class="ip-box">
             <div class="ip-text" id="ip">
-                cruelmc.aternos.me:34467
+                Server ID: CRUELMC
             </div>
             <button class="copy-btn" onclick="copyIP()">Kopyala</button>
         </div>
@@ -245,9 +245,11 @@ body{
 </section>
 
 <script>
+
+const realIP = "cruelmc.aternos.me:34467";
+
 function copyIP(){
-    const ip=document.getElementById("ip").innerText;
-    navigator.clipboard.writeText(ip);
+    navigator.clipboard.writeText(realIP);
     alert("IP kopyalandı!");
 }
 
@@ -276,6 +278,7 @@ function checkServer(){
 
 checkServer();
 setInterval(checkServer, 30000);
+
 </script>
 
 </body>
