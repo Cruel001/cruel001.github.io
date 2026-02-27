@@ -8,6 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
 <style>
+html{
+    scroll-behavior:smooth;
+}
+
 *{
     margin:0;
     padding:0;
@@ -15,15 +19,13 @@
 }
 
 body{
-    height:100vh;
     background:url('background.png') no-repeat center center fixed;
     background-size:cover;
     font-family:'Russo One', sans-serif;
-    animation:fadeIn 1.2s ease forwards;
-    opacity:0;
+    color:white;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 .navbar{
     position:fixed;
     top:0;
@@ -45,7 +47,6 @@ body{
     color:white;
     text-decoration:none;
     font-size:16px;
-    position:relative;
     transition:0.3s;
 }
 
@@ -53,29 +54,16 @@ body{
     color:#00ff88;
 }
 
-.nav-item::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0%;
-    height:2px;
-    background:#00ff88;
-    transition:0.3s;
-}
-
-.nav-item:hover::after{
-    width:100%;
-}
-
-/* ===== CENTER ===== */
-.center{
-    height:100vh;
+/* SECTIONS */
+.section{
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
+    padding-top:100px;
 }
 
+/* PANEL */
 .panel{
     background:rgba(0,0,0,0.65);
     backdrop-filter:blur(6px);
@@ -83,31 +71,24 @@ body{
     border-radius:20px;
     text-align:center;
     box-shadow:0 0 40px rgba(0,0,0,0.8);
-    margin-top:80px;
+    max-width:850px;
 }
 
-/* ===== LOGO ===== */
+/* LOGO */
 .logo{
     width:360px;
-    margin-bottom:35px;
-    opacity:0;
-    animation:logoDrop 1.2s ease forwards;
+    margin-bottom:30px;
     filter:drop-shadow(0 0 12px rgba(255,120,0,0.6))
            drop-shadow(0 0 25px rgba(255,80,0,0.4));
 }
 
-/* ===== TITLE ===== */
+/* TITLE */
 .title{
-    font-size:28px;
-    color:white;
-    margin-bottom:30px;
-    text-shadow:3px 3px 0 black;
-    opacity:0;
-    animation:fadeUp 1.4s ease forwards;
-    animation-delay:0.6s;
+    font-size:26px;
+    margin-bottom:25px;
 }
 
-/* ===== STATUS ===== */
+/* STATUS */
 .status-box{
     margin-bottom:25px;
     padding:15px;
@@ -115,15 +96,12 @@ body{
     background:#111;
     box-shadow:0 6px 0 black;
     font-size:18px;
-    opacity:0;
-    animation:fadeUp 1.4s ease forwards;
-    animation-delay:1s;
 }
 
 .online{ color:#00ff88; }
 .offline{ color:#ff3c3c; }
 
-/* ===== IP ===== */
+/* IP */
 .ip-box{
     display:inline-flex;
     align-items:center;
@@ -132,9 +110,6 @@ body{
     border-radius:12px;
     box-shadow:0 6px 0 black;
     margin-bottom:20px;
-    opacity:0;
-    animation:fadeUp 1.4s ease forwards;
-    animation-delay:1.3s;
 }
 
 .ip-text{
@@ -156,7 +131,7 @@ body{
     background:#00cc55;
 }
 
-/* ===== DISCORD ===== */
+/* DISCORD */
 .discord-btn{
     display:inline-block;
     background:#5865F2;
@@ -166,40 +141,22 @@ body{
     text-decoration:none;
     font-size:16px;
     transition:0.3s;
-    opacity:0;
-    animation:fadeUp 1.4s ease forwards;
-    animation-delay:1.6s;
 }
 
 .discord-btn:hover{
     transform:scale(1.05);
 }
 
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn{
-    to{opacity:1;}
+/* RULES */
+.rules h1{
+    color:#00ff88;
+    margin-bottom:30px;
 }
 
-@keyframes logoDrop{
-    0%{
-        transform:translateY(-80px) scale(0.9);
-        opacity:0;
-    }
-    100%{
-        transform:translateY(0) scale(1);
-        opacity:1;
-    }
-}
-
-@keyframes fadeUp{
-    0%{
-        transform:translateY(30px);
-        opacity:0;
-    }
-    100%{
-        transform:translateY(0);
-        opacity:1;
-    }
+.rule{
+    margin-bottom:15px;
+    line-height:1.6;
+    font-size:17px;
 }
 </style>
 </head>
@@ -208,12 +165,13 @@ body{
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="#" class="nav-item">Ana Səhifə</a>
-        <a href="#" class="nav-item">Qaydalar</a>
+        <a href="#home" class="nav-item">Ana Səhifə</a>
+        <a href="#rules" class="nav-item">Qaydalar</a>
     </div>
 </nav>
 
-<div class="center">
+<!-- ANA SEHIFE -->
+<section id="home" class="section">
     <div class="panel">
 
         <img src="LOGOTEXT.png" class="logo">
@@ -238,7 +196,23 @@ body{
         </a>
 
     </div>
-</div>
+</section>
+
+<!-- QAYDALAR -->
+<section id="rules" class="section">
+    <div class="panel rules">
+
+        <h1>Server Qaydaları</h1>
+
+        <div class="rule">1️⃣ Hörmətli olun. Söyüş və təhqir qadağandır.</div>
+        <div class="rule">2️⃣ Hacking və cheat istifadə etmək qadağandır.</div>
+        <div class="rule">3️⃣ Başqa oyunçuların əşyalarını icazəsiz götürmək olmaz.</div>
+        <div class="rule">4️⃣ Serverdə reklam etmək qadağandır.</div>
+        <div class="rule">5️⃣ Admin və moderator qərarlarına hörmət edin.</div>
+        <div class="rule">6️⃣ Bug tapdıqda rəhbərliyə bildirin.</div>
+
+    </div>
+</section>
 
 <script>
 function copyIP(){
