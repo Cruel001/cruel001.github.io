@@ -3,46 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CruelMC Network</title>
-
-<!-- Strong but clean font (AZ supported) -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<title>CruelMC</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
-    background: linear-gradient(to bottom, #1a1a1a, #000000);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-}
-.discord-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 30px;
-    background: #5865F2;
+    background: linear-gradient(to bottom, #1e1e1e, #121212);
     color: white;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 10px;
-    transition: 0.3s ease;
-    font-size: 16px;
+    text-align: center;
 }
 
-.discord-btn:hover {
-    background: #4752C4;
-    transform: scale(1.07);
+/* Logo */
+.logo {
+    margin-top: 60px;
 }
+
+.logo img {
+    width: 320px;
+}
+
+/* Başlıq */
+.main-title {
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: 800;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* IP Box */
 .ip-box {
-    margin-top: 25px;
+    margin-top: 35px;
     background: #2b2b2b;
     padding: 15px 25px;
     border-radius: 8px;
@@ -87,78 +80,48 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* Logo */
-.logo-container {
-    margin-top: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Discord Button */
+.discord-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 30px;
+    background: #5865F2;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    font-size: 16px;
 }
 
-.logo-container img {
-    width: 620px;
-    max-width: 90%;
+.discord-btn:hover {
+    background: #4752C4;
+    transform: scale(1.07);
 }
 
-/* Main Title - Stone Style */
-.main-title {
-    margin-top: 35px;
-    font-size: 42px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    letter-spacing: 1px;
-
-    /* Stone color */
-    color: #d1d1d1;
-
-    /* Block / stone depth effect */
-    text-shadow:
-        2px 2px 0 #888888,
-        4px 4px 0 #555555,
-        6px 6px 0 #2a2a2a;
-}
-
-/* Info Text */
-.info {
-    margin-top: 30px;
-    font-size: 18px;
-    opacity: 0.85;
-}
-
-/* Footer */
-.footer {
-    margin-top: auto;
-    margin-bottom: 30px;
-    font-size: 14px;
-    opacity: 0.6;
-}
 </style>
 </head>
 
 <body>
 
-<div class="logo-container">
+<div class="logo">
     <img src="LOGOTEXT.png" alt="CruelMC Logo">
 </div>
 
-<h1 class="main-title">Azərbaycanın İlk Minecraft Serveri</h1>
+<h1 class="main-title">
+    Azərbaycanın ilk Minecraft Serverinə xoş gəldiniz
+</h1>
 
-<div class="info">
-    <div class="ip-box">
+<div class="ip-box">
     <span id="server-ip">curelmc.aternos.me:34467</span>
     <button onclick="copyIP()" class="copy-btn">📋</button>
     <span id="copied-text" class="copied">Kopyalandı!</span>
 </div>
 
-    <a href="https://discord.gg/PZDHWBKz" target="_blank" class="discord-btn">
-    Discord'a Qoşul</a>
+<a href="https://discord.gg/PZDHWBKz" target="_blank" class="discord-btn">
+    Discord'a Qoşul
+</a>
 
-</div>
-
-<div class="footer">
-    <p>© 2026 CruelMC Network - Bütün Hüquqlar Qorunur</p>
-</div>
 <script>
 function copyIP() {
     const ip = document.getElementById("server-ip").innerText;
@@ -176,7 +139,3 @@ function copyIP() {
 
 </body>
 </html>
-
-
-
-
