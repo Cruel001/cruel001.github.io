@@ -1,66 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CruelMC Network</title>
 
-<!-- Minecraft style font -->
-<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+<!-- Pixel style font (AZ supported via fallback) -->
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Orbitron:wght@700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.logo {
-    margin-top: 60px;
+body {
+    background: linear-gradient(to bottom, #000000, #0a0a0a);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Russo One', sans-serif;
 }
 
-.logo img {
-    width: 550px; /* LOGO BÜYÜDÜ */
-}
-
-.main-title {
-    font-family: 'Minecraft', sans-serif;
-    font-size: 42px;
-    margin-top: 30px; /* YUKARI ÇEKİLDİ */
-    letter-spacing: 2px;
-}
-
-.info {
-    margin-top: 15px;
-    font-size: 18px;
-}
-
-.footer {
+/* Logo */
+.logo-container {
     margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 600px;
+    max-width: 90%;
+}
+
+/* Main Title */
+.main-title {
+    margin-top: 30px;
+    font-size: 42px;
+    text-align: center;
+    font-family: 'Orbitron', 'Russo One', sans-serif;
+    letter-spacing: 2px;
+    color: #55ff55;
+    text-shadow:
+        0 0 5px #00ff00,
+        0 0 10px #00cc00,
+        0 0 20px #009900;
+}
+
+/* Info Text */
+.info {
+    margin-top: 25px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    margin-bottom: 30px;
     font-size: 14px;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 </style>
 </head>
 
 <body>
 
-<div class="logo">
-    <img src="logo.png" alt="CruelMC Logo">
+<div class="logo-container">
+    <img src="LOGOTEXT.png" alt="CruelMC Logo">
 </div>
 
-<h1 class="main-title">Azerbaycan'ın İlk Minecraft Serveri</h1>
+<h1 class="main-title">Azərbaycanın İlk Minecraft Serveri</h1>
 
 <div class="info">
-    <p>Sunucu IP adresi: yakında...</p>
-    <p>Discord: yakında...</p>
+    <p>Sunucu IP ünvanı: yaxın zamanda...</p>
+    <p>Discord: yaxın zamanda...</p>
 </div>
 
 <div class="footer">
-    <p>© 2026 CruelMC Network - Tüm Hakları Saklıdır</p>
+    <p>© 2026 CruelMC Network - Bütün Hüquqlar Qorunur</p>
 </div>
 
 </body>
