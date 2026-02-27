@@ -68,7 +68,7 @@ body{
     width:100%;
 }
 
-/* ===== CENTER PANEL ===== */
+/* ===== CENTER ===== */
 .center{
     height:100vh;
     display:flex;
@@ -94,11 +94,6 @@ body{
     animation:logoDrop 1.2s ease forwards;
     filter:drop-shadow(0 0 12px rgba(255,120,0,0.6))
            drop-shadow(0 0 25px rgba(255,80,0,0.4));
-    transition:0.4s;
-}
-
-.logo:hover{
-    transform:scale(1.05);
 }
 
 /* ===== TITLE ===== */
@@ -112,9 +107,9 @@ body{
     animation-delay:0.6s;
 }
 
-/* ===== STATUS BOX ===== */
+/* ===== STATUS ===== */
 .status-box{
-    margin-bottom:30px;
+    margin-bottom:25px;
     padding:15px;
     border-radius:12px;
     background:#111;
@@ -128,7 +123,7 @@ body{
 .online{ color:#00ff88; }
 .offline{ color:#ff3c3c; }
 
-/* ===== IP BOX ===== */
+/* ===== IP ===== */
 .ip-box{
     display:inline-flex;
     align-items:center;
@@ -136,7 +131,7 @@ body{
     padding:15px 22px;
     border-radius:12px;
     box-shadow:0 6px 0 black;
-    margin-bottom:25px;
+    margin-bottom:20px;
     opacity:0;
     animation:fadeUp 1.4s ease forwards;
     animation-delay:1.3s;
@@ -159,6 +154,25 @@ body{
 
 .copy-btn:hover{
     background:#00cc55;
+}
+
+/* ===== DISCORD ===== */
+.discord-btn{
+    display:inline-block;
+    background:#5865F2;
+    color:white;
+    padding:12px 30px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+    opacity:0;
+    animation:fadeUp 1.4s ease forwards;
+    animation-delay:1.6s;
+}
+
+.discord-btn:hover{
+    transform:scale(1.05);
 }
 
 /* ===== ANIMATIONS ===== */
@@ -219,6 +233,10 @@ body{
             <button class="copy-btn" onclick="copyIP()">Kopyala</button>
         </div>
 
+        <a href="https://discord.gg/PZDHWBKz" target="_blank" class="discord-btn">
+            Discord serverimizə qoşul
+        </a>
+
     </div>
 </div>
 
@@ -229,28 +247,31 @@ function copyIP(){
     alert("IP kopyalandı!");
 }
 
-/* ===== SERVER STATUS SYSTEM ===== */
 const serverIP = "cruelmc.aternos.me";
 const serverPort = "34467";
 
-fetch(`https://mcapi.us/server/status?ip=${serverIP}&port=${serverPort}`)
-.then(response => response.json())
-.then(data => {
-    const statusBox = document.getElementById("serverStatus");
-    
-    if(data.online){
-        statusBox.innerHTML = 
+function checkServer(){
+    fetch(`https://mcapi.us/server/status?ip=${serverIP}&port=${serverPort}`)
+    .then(response => response.json())
+    .then(data => {
+        const box = document.getElementById("serverStatus");
+        if(data.online){
+            box.innerHTML =
             "<span class='online'>● Server Aktivdir</span><br>" +
             "Oyunçular: " + data.players.now + " / " + data.players.max;
-    } else {
-        statusBox.innerHTML = 
+        }else{
+            box.innerHTML =
             "<span class='offline'>● Server Aktiv Deyil</span>";
-    }
-})
-.catch(() => {
-    document.getElementById("serverStatus").innerHTML =
+        }
+    })
+    .catch(()=>{
+        document.getElementById("serverStatus").innerHTML =
         "<span class='offline'>Status yoxlanıla bilmədi</span>";
-});
+    });
+}
+
+checkServer();
+setInterval(checkServer, 30000);
 </script>
 
 </body>
