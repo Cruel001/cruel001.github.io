@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CruelMC - Rank Sistemi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:url('background.png') no-repeat center center fixed;
+    background-size:cover;
+    font-family:'Exo 2', sans-serif;
+    color:white;
+}
+
+/* NAVBAR */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 0;
+    background:rgba(0,0,0,0.8);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:center;
+    z-index:1000;
+}
+
+.nav-container{
+    display:flex;
+    gap:40px;
+}
+
+.nav-item{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.nav-item:hover{
+    color:#00ff88;
+}
+
+/* SECTION */
+.section{
+    padding:140px 20px 60px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:50px;
+    text-shadow:0 0 20px rgba(0,255,136,0.4);
+}
+
+/* CARD */
+.rank-card{
+    background:rgba(0,0,0,0.65);
+    backdrop-filter:blur(6px);
+    padding:30px;
+    border-radius:18px;
+    margin-bottom:35px;
+    transition:0.3s;
+}
+
+.rank-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(0,255,136,0.3);
+}
+
+.rank-name{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.rank-info{
+    margin-bottom:15px;
+    font-weight:600;
+}
+
+.features{
+    margin-top:10px;
+    padding-left:20px;
+}
+
+.features li{
+    margin-bottom:6px;
+}
+
+/* RANK COLORS */
+.player{ color:#ffd700; }
+.premium{ color:#ffcc00; }
+.fly{ color:#00aa55; }
+.helper{ color:#ff8800; }
+.moderator{ color:#a020f0; }
+.admin{ color:#0044ff; }
+.kurucu{ color:#cc0000; }
+
+/* MOBILE */
+@media(max-width:768px){
+    .title{
+        font-size:28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-item">Ana Səhifə</a>
+        <a href="qaydalar.html" class="nav-item">Qaydalar</a>
+        <a href="rank.html" class="nav-item">Rütbələr</a>
+    </div>
+</nav>
+
+<section class="section">
+
+<h1 class="title">🏆 RANK SİSTEMİ</h1>
+
+<!-- PLAYER -->
+<div class="rank-card">
+    <div class="rank-name player">👤 PLAYER</div>
+    <div class="rank-info">Rəng: Sarı</div>
+    <div class="rank-info">Prefix: Player</div>
+    <div class="rank-info">Kimlər üçündür? Serverə ilk dəfə qoşulan bütün oyunçular.</div>
+    <ul class="features">
+        <li>/rtp</li>
+        <li>/tpa</li>
+        <li>/home</li>
+        <li>/sethome (1 ədəd)</li>
+        <li>/shop</li>
+        <li>Start kit</li>
+        <li>Gündəlik mükafat</li>
+    </ul>
+</div>
+
+<!-- PREMIUM -->
+<div class="rank-card">
+    <div class="rank-name premium">💎 PREMIUM</div>
+    <div class="rank-info">Rəng: Qızılı</div>
+    <div class="rank-info">Prefix: (Premium)</div>
+    <div class="rank-info">Kimlər üçündür? Serverə dəstək olan və ya satın alan oyunçular.</div>
+    <ul class="features">
+        <li>Bütün Player xüsusiyyətləri</li>
+        <li>/kit premium (12 saatda 1 dəfə)</li>
+        <li>/sethome (3 ədəd)</li>
+        <li>Daha çox claim limiti</li>
+        <li>VIP chat rəngi</li>
+        <li>/hat</li>
+        <li>/workbench</li>
+    </ul>
+</div>
+
+<!-- FLY -->
+<div class="rank-card">
+    <div class="rank-name fly">🕊 FLY</div>
+    <div class="rank-info">Rəng: Tünd Yaşıl</div>
+    <div class="rank-info">Prefix: (Fly)</div>
+    <div class="rank-info">Kimlər üçündür? Xüsusi event qalibləri və ya satın alanlar.</div>
+    <ul class="features">
+        <li>Premium bütün xüsusiyyətləri</li>
+        <li>/fly</li>
+        <li>Fall damage olmur</li>
+        <li>5 home limiti</li>
+    </ul>
+</div>
+
+<!-- HELPER -->
+<div class="rank-card">
+    <div class="rank-name helper">🧡 HELPER</div>
+    <div class="rank-info">Rəng: Narıncı</div>
+    <div class="rank-info">Prefix: (Helper)</div>
+    <div class="rank-info">Kimlər üçündür? Serverin yaradılmasında kömək edənlər.</div>
+    <ul class="features">
+        <li>/mute</li>
+        <li>/kick</li>
+        <li>/warn</li>
+        <li>Oyunçu problemlərini həll etmə</li>
+        <li>Staff chat</li>
+    </ul>
+</div>
+
+<!-- MODERATOR -->
+<div class="rank-card">
+    <div class="rank-name moderator">💜 MODERATOR</div>
+    <div class="rank-info">Rəng: Bənövşəyi</div>
+    <div class="rank-info">Prefix: (Moderator)</div>
+    <div class="rank-info">Kimlər üçündür? Server nizam-intizamına cavabdeh heyət.</div>
+    <ul class="features">
+        <li>/ban</li>
+        <li>/tempban</li>
+        <li>/clear</li>
+        <li>/vanish</li>
+        <li>/tp</li>
+        <li>Cheat nəzarəti</li>
+    </ul>
+</div>
+
+<!-- ADMIN -->
+<div class="rank-card">
+    <div class="rank-name admin">💙 ADMIN</div>
+    <div class="rank-info">Rəng: Tünd Göy</div>
+    <div class="rank-info">Prefix: (Admin)</div>
+    <div class="rank-info">Kimlər üçündür? Server idarəçiləri.</div>
+    <ul class="features">
+        <li>Bütün moderator icazələri</li>
+        <li>/gamemode</li>
+        <li>/give</li>
+        <li>/heal</li>
+        <li>/god</li>
+        <li>Server idarə paneli</li>
+    </ul>
+</div>
+
+<!-- KURUCU -->
+<div class="rank-card">
+    <div class="rank-name kurucu">❤️ KURUCU</div>
+    <div class="rank-info">Rəng: Tünd Qırmızı</div>
+    <div class="rank-info">Prefix: (Kurucu)</div>
+    <div class="rank-info">Kimlər üçündür? Server sahibi.</div>
+    <ul class="features">
+        <li>Bütün icazələr</li>
+        <li>Server tam idarəetmə</li>
+        <li>Plugin və sistem nəzarəti</li>
+        <li>Developer əmrləri</li>
+    </ul>
+</div>
+
+</section>
+
+</body>
+</html>
